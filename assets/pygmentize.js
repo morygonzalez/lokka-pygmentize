@@ -5,7 +5,7 @@
       $.ajax({
         type: 'POST',
         url: '/pygmentize',
-        data: { snippet: $(self).text(), lexar: '' }
+        data: { snippet: $(self).text(), lexer: '' }
       }).done(function(data) {
         $(self).replaceWith(data);
       });
