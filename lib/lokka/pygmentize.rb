@@ -1,16 +1,30 @@
+require 'pygments.rb'
+
 module Lokka
   module Pygmentize
     def self.registered(app)
       app.post '/pygmentize' do
-        snipet = Pygments.highlight(params['snippet'], :lexar => params['lexar'])
+        Pygments.highlight(
+          params['snippet'],
+          :lexar => params['lexar'],
+          :options => { :encoding => 'utf-8' }
+        )
       end
 
-      app.put '/admin/plugins/amazon_associate' do
-        Option.associate_tag = params['associate_tag']
-        Option.access_key_id = params['access_key_id']
-        Option.secret_key = params['secret_key']
-        flash[:notice] = 'Updated.'
-        redirect '/admin/plugins/amazon_associate'
+      app.before do
+        assets_path = "/plugin/lokka-pygmentize/assets"
+
+        content_for :header do
+          text = <<-EOS
+          <link href="#{assets_path}/monokai.css" rel="stylesheet" type="text/css" />
+          EOS
+        end
+
+        content_for :footer do
+          text = <<-EOS
+          <script src="#{assets_path}/pygmentize.js" type="text/javascript"></script>
+          EOS
+        end
       end
     end
   end
