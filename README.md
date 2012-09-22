@@ -1,4 +1,4 @@
-lokka-pygmentize
+Lokka Pygmentize
 ================
 
 Sexy Syntax highlighter for Lokka
