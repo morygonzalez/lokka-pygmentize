@@ -3,6 +3,14 @@ Lokka Pygmentize
 
 Sexy Syntax highlighter for Lokka
 
+## Requirement
+
+This plugin depends on Pygments, a Python syntax highligher. You need to set up Python and Pygments before you use this plugin.
+
+For more information, please look at below.
+
+[Pygments — Python syntax highlighter](http://pygments.org/docs/installation/ "Pygments — Python syntax highlighter")
+
 ## Installation
 
 ```sh
