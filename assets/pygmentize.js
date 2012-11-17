@@ -1,6 +1,6 @@
 (function() {
   var init = function(node) {
-    $(node).find(".body > pre").each(function() {
+    $(node).find(".body > pre, blockquote > pre").each(function() {
       var self = this;
       var lexer = $(this).attr('class');
       $.ajax({
