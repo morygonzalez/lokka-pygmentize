@@ -18,6 +18,13 @@ cd $LOKKA_ROOT/public/plugin
 git clone git://github.com/morygonzalez/lokka-pygmentize.git
 ```
 
+Don't forget to execute `bundle install`. This plugin will add `pygments.rb` to your Lokka site's `Gemfile.lock`.
+
+```sh
+cd $LOKKA_ROOT
+bundle install
+```
+
 ## How to use
 
 Write html just like below.
